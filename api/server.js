@@ -1,7 +1,11 @@
 import express from "express"
 import taskRouter from "./src/routers/taskRouter.js";
+import { mongoConnect } from "./src/config/mongoDB.js";
 
 const PORT = 8000;
+
+//connect mongodb
+mongoConnect();
 
 const app = express();
 

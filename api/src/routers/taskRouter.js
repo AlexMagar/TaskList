@@ -1,4 +1,5 @@
 import express from "express"
+import { createTask } from "../model/TaskModel.js";
 
 const router = express.Router();
 
@@ -47,12 +48,26 @@ router.get("/", (req, res) =>{
     })
 })
 
-router.post("/", (req, res) =>{
-    fakeDb.push(req.body)
-    res.json({
-        status: "Success",
-        message: "New task has been added successfully"
-    })
+router.post("/", async (req, res) =>{
+    try {
+        
+        const result = await createTask(req.body);
+        result?._id
+        ? res.json({
+            status: "Success",
+            message: "New task has been added successfully"
+        })
+        : res.json({
+            status: "error",
+            message: "fail to push in db"
+        })
+        
+    } catch (error) {
+        res.json({
+            status: "error",
+            message: error.message
+        })
+    }
 })
 
 router.put("/", (req, res) =>{

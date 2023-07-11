@@ -1,0 +1,37 @@
+@rootApi = http://localhost:8000
+
+@userApi = {{rootApi}}/api/v1/user
+
+### server testing get
+GET {{rootApi}}
+
+### POST method
+POST {{rootApi}}
+Content-Type: application/json
+
+{
+    "_id": "123454",
+    "name": "Laxman",
+    "address": "Sydney",
+    "phone": "0405003994",
+    "Spouse": "Mamata",
+    "Bike": "BMW"
+    
+}
+
+### put method
+PUT {{rootApi}}
+Content-Type: application/json
+
+{
+    "_id":"123453",
+    "Bike": "Yamaha"
+}
+
+### delete method
+DELETE {{rootApi}}
+Content-Type: application/json
+
+{
+    "_id": "123453"
+}

@@ -1,6 +1,6 @@
-@rootApi = http://localhost:8000
+@rootApi = http://localhost:8000/api/v1/task
 
-@userApi = {{rootApi}}/api/v1/user
+@userApi = {{rootApi}}/user
 
 ### server testing get
 GET {{rootApi}}
@@ -10,28 +10,22 @@ POST {{rootApi}}
 Content-Type: application/json
 
 {
-    "_id": "123454",
-    "name": "Laxman",
-    "address": "Sydney",
-    "phone": "0405003994",
-    "Spouse": "Mamata",
-    "Bike": "BMW"
+    "name": "Hari",
+    "address": "Perth",
+    "phone": "040500399434",
+    "spouse": "Sudha",
+    "bike": "Harley"
     
 }
 
 ### put method
-PUT {{rootApi}}
+PATCH  {{rootApi}}
 Content-Type: application/json
 
 {
-    "_id":"123453",
-    "Bike": "Yamaha"
+    "_id":"64afd3116225731d10cc8357",
+    "bike": "Roma"
 }
 
 ### delete method
-DELETE {{rootApi}}
-Content-Type: application/json
-
-{
-    "_id": "123453"
-}
+DELETE {{rootApi}}/64afd854d54cd0f3599cd292

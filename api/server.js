@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json()) //to prase the json
 
 //handle the request
-app.use("/", taskRouter)
+app.use("/api/v1/task", taskRouter)
 
 //open port for http request to access the server
 app.listen(PORT, (err) =>{
